@@ -1,0 +1,89 @@
+# Master Vulnerability Finding Template
+# Format: TOML (Tom's Obvious Minimal Language)
+# Version: 1.0.0
+# Description: Generic vulnerability finding template for cross-language compatibility
+
+[metadata]
+finding_id = ""
+title = "Security Misconfiguration"
+date_discovered = ""
+date_reported = ""
+assessment_id = ""
+author = ""
+reviewer = ""
+client_id = ""
+status = ""
+confidentiality = ""
+
+[classification]
+severity = "Medium" # Can vary widely based on the specific misconfiguration
+cvss_score = 5.3 # Example: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N (Information disclosure due to directory listing)
+cvss_vector = "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N"
+cwe_id = ""
+cwe_name = ""
+owasp_category = "A05:2021-Security Misconfiguration"
+
+[affected_components]
+system = ""
+component = ""
+version = ""
+location = ""
+endpoints = []
+technologies = []
+
+[details]
+description = ""
+impact = ""
+root_cause = ""
+
+[reproduction]
+preconditions = ""
+steps = [
+    "Review server and application configurations for default credentials, unnecessary services enabled, verbose error messages, or improper security headers.",
+    "Check for publicly accessible administrative interfaces or sensitive files (e.g., .git directory, configuration backups).",
+    "Verify if software components (OS, web server, frameworks, libraries) are up-to-date and patched.",
+    "Test for common misconfigurations like enabled directory listing, or missing HTTP security headers (e.g., Strict-Transport-Security, Content-Security-Policy)."
+]
+payload = ""
+screenshots = []
+
+[proof_of_concept]
+code = ""
+curl_command = ""
+
+[remediation]
+recommendation = "Implement a secure hardening process for all components. Regularly review and update configurations. Disable unnecessary features and services. Use strong, unique credentials and avoid defaults. Implement appropriate HTTP security headers. Ensure software is kept up-to-date with security patches. Restrict access to administrative interfaces and sensitive files."
+code_fix = ""
+estimated_effort = ""
+timeline = ""
+
+[references]
+cve_ids = []
+external_references = [
+    "https://owasp.org/Top10/A05_2021-Security_Misconfiguration/",
+    "https://cheatsheetseries.owasp.org/cheatsheets/Attack_Surface_Analysis_Cheat_Sheet.html",
+    "https://cheatsheetseries.owasp.org/cheatsheets/HTTP_Headers_Cheat_Sheet.html"
+]
+internal_references = []
+
+[communication]
+disclosed_to = ""
+disclosed_on = ""
+response = ""
+
+[tracking]
+issue_tracker_id = ""
+pull_request = ""
+fix_version = ""
+fix_date = ""
+verification_date = ""
+
+[compliance]
+regulatory_impact = []
+business_impact = ""
+data_breach_risk = false
+
+[additional_info]
+notes = ""
+tags = []
+linked_findings = []

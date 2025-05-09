@@ -1,0 +1,88 @@
+# Master Vulnerability Finding Template
+# Format: TOML (Tom's Obvious Minimal Language)
+# Version: 1.0.0
+# Description: Generic vulnerability finding template for cross-language compatibility
+
+[metadata]
+finding_id = ""
+title = "Broken Access Control"
+date_discovered = ""
+date_reported = ""
+assessment_id = ""
+author = ""
+reviewer = ""
+client_id = ""
+status = ""
+confidentiality = ""
+
+[classification]
+severity = "High"
+cvss_score = 8.1
+cvss_vector = "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N" # Assuming authenticated user, can view/modify unauthorized data
+cwe_id = ""
+cwe_name = ""
+owasp_category = "A01:2021-Broken Access Control"
+
+[affected_components]
+system = ""
+component = ""
+version = ""
+location = ""
+endpoints = []
+technologies = []
+
+[details]
+description = ""
+impact = ""
+root_cause = ""
+
+[reproduction]
+preconditions = ""
+steps = [
+    "Identify functionalities or resources that should be restricted based on user roles or privileges.",
+    "As a low-privileged user, attempt to directly access URLs or API endpoints intended for higher-privileged users (e.g., /admin, /api/users/{another_user_id}).",
+    "Attempt to perform actions on resources not owned by the current user (e.g., editing another user's profile by manipulating an ID in a request).",
+    "Observe if the application grants access to unauthorized functionalities or data."
+]
+payload = ""
+screenshots = []
+
+[proof_of_concept]
+code = ""
+curl_command = ""
+
+[remediation]
+recommendation = "Implement access control mechanisms that enforce policies based on user roles and permissions. Deny access by default. Verify access controls on the server-side for every request. Ensure that identifiers for resources are not easily guessable or manipulable (e.g., use UUIDs instead of sequential IDs where appropriate)."
+code_fix = ""
+estimated_effort = ""
+timeline = ""
+
+[references]
+cve_ids = []
+external_references = [
+    "https://owasp.org/Top10/A01_2021-Broken_Access_Control/",
+    "https://cheatsheetseries.owasp.org/cheatsheets/Access_Control_Cheat_Sheet.html"
+]
+internal_references = []
+
+[communication]
+disclosed_to = ""
+disclosed_on = ""
+response = ""
+
+[tracking]
+issue_tracker_id = ""
+pull_request = ""
+fix_version = ""
+fix_date = ""
+verification_date = ""
+
+[compliance]
+regulatory_impact = []
+business_impact = ""
+data_breach_risk = false
+
+[additional_info]
+notes = ""
+tags = []
+linked_findings = []

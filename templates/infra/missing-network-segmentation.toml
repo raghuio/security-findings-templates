@@ -1,0 +1,89 @@
+# Master Vulnerability Finding Template
+# Format: TOML (Tom's Obvious Minimal Language)
+# Version: 1.0.0
+# Description: Generic vulnerability finding template for cross-language compatibility
+
+[metadata]
+finding_id = ""
+title = "Infrastructure: Missing or Improper Network Segmentation"
+date_discovered = ""
+date_reported = ""
+assessment_id = ""
+author = ""
+reviewer = ""
+client_id = ""
+status = ""
+confidentiality = ""
+
+[classification]
+severity = "Medium" # Can be High depending on the assets exposed
+cvss_score = 6.8 # Example: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:L/A:N (Attacker needs to pivot but can access sensitive internal systems)
+cvss_vector = "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:L/A:N"
+cwe_id = "" # e.g., CWE-914: Improperly Resolved Network Self-Reference
+cwe_name = ""
+owasp_category = "N/A" # Not directly in OWASP Top 10, but a fundamental network security principle
+
+[affected_components]
+system = "" # e.g., Corporate Network, DMZ, Production Environment
+component = "" # e.g., Firewall, Router, VLAN configuration
+version = ""
+location = "" # e.g., Network diagrams, Firewall rule sets
+endpoints = []
+technologies = []
+
+[details]
+description = ""
+impact = ""
+root_cause = ""
+
+[reproduction]
+preconditions = ""
+steps = [
+    "Review network diagrams and firewall rule sets to understand the intended network segmentation.",
+    "Perform network scanning and host discovery from different network segments (e.g., guest network, user network, DMZ, internal trusted network).",
+    "Attempt to access services or hosts in more sensitive segments from less sensitive segments where such access should be denied (e.g., accessing internal database servers from the guest Wi-Fi).",
+    "Verify if firewall rules are overly permissive, allowing unnecessary traffic between segments.",
+    "Check for flat network architectures where critical assets are not isolated from general user or less trusted networks."
+]
+payload = ""
+screenshots = []
+
+[proof_of_concept]
+code = ""
+curl_command = ""
+
+[remediation]
+recommendation = "Implement a defense-in-depth network segmentation strategy. Isolate critical systems and sensitive data in dedicated network segments with strict access controls. Apply the principle of least privilege to network traffic, only allowing necessary communication between segments. Regularly review and audit firewall rules and network configurations. Use technologies like VLANs, firewalls, and Network Access Control (NAC) to enforce segmentation."
+code_fix = ""
+estimated_effort = ""
+timeline = ""
+
+[references]
+cve_ids = []
+external_references = [
+    "https://www.cisa.gov/news-events/news/understanding-network-segmentation",
+    "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-41r1.pdf"
+]
+internal_references = []
+
+[communication]
+disclosed_to = ""
+disclosed_on = ""
+response = ""
+
+[tracking]
+issue_tracker_id = ""
+pull_request = ""
+fix_version = ""
+fix_date = ""
+verification_date = ""
+
+[compliance]
+regulatory_impact = []
+business_impact = ""
+data_breach_risk = false
+
+[additional_info]
+notes = ""
+tags = []
+linked_findings = []

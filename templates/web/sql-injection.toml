@@ -1,0 +1,87 @@
+# Master Vulnerability Finding Template
+# Format: TOML (Tom's Obvious Minimal Language)
+# Version: 1.0.0
+# Description: Generic vulnerability finding template for cross-language compatibility
+
+[metadata]
+finding_id = ""
+title = "SQL Injection (SQLi)"
+date_discovered = ""
+date_reported = ""
+assessment_id = ""
+author = ""
+reviewer = ""
+client_id = ""
+status = ""
+confidentiality = ""
+
+[classification]
+severity = "Critical"
+cvss_score = 9.8
+cvss_vector = "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+cwe_id = ""
+cwe_name = ""
+owasp_category = "A03:2021-Injection"
+
+[affected_components]
+system = ""
+component = ""
+version = ""
+location = ""
+endpoints = []
+technologies = []
+
+[details]
+description = ""
+impact = ""
+root_cause = ""
+
+[reproduction]
+preconditions = ""
+steps = [
+    "Identify an input parameter that is used in a SQL query (e.g., URL parameter, form field).",
+    "Attempt to inject SQL meta-characters (e.g., ', \", --, OR 1=1) to manipulate the query's logic.",
+    "Observe the application's response for errors, unexpected data disclosure, or modified behavior, indicating successful injection."
+]
+payload = ""
+screenshots = []
+
+[proof_of_concept]
+code = ""
+curl_command = ""
+
+[remediation]
+recommendation = "Use parameterized queries (prepared statements) for all database interactions. Validate and sanitize all user-supplied input. Implement the principle of least privilege for database accounts."
+code_fix = ""
+estimated_effort = ""
+timeline = ""
+
+[references]
+cve_ids = []
+external_references = [
+    "https://owasp.org/www-community/attacks/SQL_Injection",
+    "https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html"
+]
+internal_references = []
+
+[communication]
+disclosed_to = ""
+disclosed_on = ""
+response = ""
+
+[tracking]
+issue_tracker_id = ""
+pull_request = ""
+fix_version = ""
+fix_date = ""
+verification_date = ""
+
+[compliance]
+regulatory_impact = []
+business_impact = ""
+data_breach_risk = false
+
+[additional_info]
+notes = ""
+tags = []
+linked_findings = []

@@ -1,0 +1,90 @@
+# Master Vulnerability Finding Template
+# Format: TOML (Tom's Obvious Minimal Language)
+# Version: 1.0.0
+# Description: Generic vulnerability finding template for cross-language compatibility
+
+[metadata]
+finding_id = ""
+title = "Infrastructure: Use of Outdated Software Components"
+date_discovered = ""
+date_reported = ""
+assessment_id = ""
+author = ""
+reviewer = ""
+client_id = ""
+status = ""
+confidentiality = ""
+
+[classification]
+severity = "High" # Can be Critical if known exploits exist for the outdated versions
+cvss_score = 7.5 # Example: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N (Remote unauthenticated attacker can exploit known vulnerability)
+cvss_vector = "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N" # This can vary greatly
+cwe_id = "" # e.g., CWE-937: Use of Outdated Components with Known Vulnerabilities
+cwe_name = ""
+owasp_category = "A06:2021-Vulnerable and Outdated Components" # From Web Top 10, but principle applies broadly
+
+[affected_components]
+system = "" # e.g., Server OS, Network Device Firmware
+component = "" # e.g., Apache Web Server, OpenSSL, Linux Kernel, Cisco IOS
+version = "" # Detected version
+location = "" # e.g., IP Address, Hostname
+endpoints = []
+technologies = []
+
+[details]
+description = ""
+impact = ""
+root_cause = ""
+
+[reproduction]
+preconditions = ""
+steps = [
+    "Perform version scanning of services and software running on infrastructure components (servers, network devices, etc.).",
+    "Identify the specific versions of operating systems, web servers, application servers, libraries, frameworks, and other software.",
+    "Compare the detected versions against public vulnerability databases (e.g., NVD, CVE Details) and vendor advisories.",
+    "Determine if the identified versions are outdated and have known, unpatched vulnerabilities.",
+    "Note any publicly available exploits for the identified vulnerabilities."
+]
+payload = ""
+screenshots = []
+
+[proof_of_concept]
+code = ""
+curl_command = ""
+
+[remediation]
+recommendation = "Implement a robust patch management program. Regularly scan for and identify outdated software components. Apply security patches and updates from vendors in a timely manner. Prioritize patching based on vulnerability severity and exploitability. Consider using automated tools for vulnerability scanning and patch management. If patching is not immediately possible, consider virtual patching or other compensating controls."
+code_fix = ""
+estimated_effort = ""
+timeline = ""
+
+[references]
+cve_ids = [] # List relevant CVE IDs for the outdated component
+external_references = [
+    "https://owasp.org/Top10/A06_2021-Vulnerable_and_Outdated_Components/",
+    "https://cve.mitre.org/",
+    "https://nvd.nist.gov/"
+]
+internal_references = []
+
+[communication]
+disclosed_to = ""
+disclosed_on = ""
+response = ""
+
+[tracking]
+issue_tracker_id = ""
+pull_request = ""
+fix_version = ""
+fix_date = ""
+verification_date = ""
+
+[compliance]
+regulatory_impact = []
+business_impact = ""
+data_breach_risk = false
+
+[additional_info]
+notes = ""
+tags = []
+linked_findings = []

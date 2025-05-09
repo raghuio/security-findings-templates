@@ -1,0 +1,89 @@
+# Master Vulnerability Finding Template
+# Format: TOML (Tom's Obvious Minimal Language)
+# Version: 1.0.0
+# Description: Generic vulnerability finding template for cross-language compatibility
+
+[metadata]
+finding_id = ""
+title = "Insecure Direct Object References (IDOR)"
+date_discovered = ""
+date_reported = ""
+assessment_id = ""
+author = ""
+reviewer = ""
+client_id = ""
+status = ""
+confidentiality = ""
+
+[classification]
+severity = "High"
+cvss_score = 7.5 # Can vary based on impact, assuming read access to sensitive data
+cvss_vector = "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N" # Authenticated user, can view unauthorized data
+cwe_id = ""
+cwe_name = ""
+owasp_category = "A01:2021-Broken Access Control" # IDOR is a common example of BAC
+
+[affected_components]
+system = ""
+component = ""
+version = ""
+location = ""
+endpoints = []
+technologies = []
+
+[details]
+description = ""
+impact = ""
+root_cause = ""
+
+[reproduction]
+preconditions = ""
+steps = [
+    "Identify user-supplied identifiers in requests that reference specific objects (e.g., document_id=123, user_id=456).",
+    "Log in as User A and access a resource belonging to User A (e.g., /documents?document_id=123). Note the identifier.",
+    "Log in as User B (or attempt unauthenticated access if applicable).",
+    "Attempt to access User A's resource by replaying the request with User A's identifier (e.g., /documents?document_id=123).",
+    "Observe if the application grants access to User A's resource, indicating an IDOR vulnerability."
+]
+payload = ""
+screenshots = []
+
+[proof_of_concept]
+code = ""
+curl_command = ""
+
+[remediation]
+recommendation = "Implement robust access control checks on the server-side for every request that accesses an object. Verify that the authenticated user has the necessary permissions to access the requested object. Avoid exposing direct database identifiers in URLs or requests; use indirect reference maps or session-based handling where possible. If direct references are used, ensure they are unpredictable (e.g., UUIDs) and always validated against the user's session."
+code_fix = ""
+estimated_effort = ""
+timeline = ""
+
+[references]
+cve_ids = []
+external_references = [
+    "https://owasp.org/www-project-top-ten/2017/A5_2017-Broken_Access_Control", # IDOR was more explicitly called out in older OWASP Top 10s
+    "https://cheatsheetseries.owasp.org/cheatsheets/Insecure_Direct_Object_Reference_Prevention_Cheat_Sheet.html"
+]
+internal_references = []
+
+[communication]
+disclosed_to = ""
+disclosed_on = ""
+response = ""
+
+[tracking]
+issue_tracker_id = ""
+pull_request = ""
+fix_version = ""
+fix_date = ""
+verification_date = ""
+
+[compliance]
+regulatory_impact = []
+business_impact = ""
+data_breach_risk = false
+
+[additional_info]
+notes = ""
+tags = []
+linked_findings = []

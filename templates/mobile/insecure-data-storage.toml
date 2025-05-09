@@ -1,0 +1,88 @@
+# Master Vulnerability Finding Template
+# Format: TOML (Tom's Obvious Minimal Language)
+# Version: 1.0.0
+# Description: Generic vulnerability finding template for cross-language compatibility
+
+[metadata]
+finding_id = ""
+title = "Mobile Insecure Data Storage"
+date_discovered = ""
+date_reported = ""
+assessment_id = ""
+author = ""
+reviewer = ""
+client_id = ""
+status = ""
+confidentiality = ""
+
+[classification]
+severity = "Medium" # Can be High depending on the sensitivity of the stored data
+cvss_score = 5.5 # Example: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N (Local attacker with access to device can read sensitive data)
+cvss_vector = "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N"
+cwe_id = ""
+cwe_name = ""
+owasp_category = "M2: Insecure Data Storage" # OWASP Mobile Top 10 2016
+
+[affected_components]
+system = "" # e.g., Android, iOS
+component = "" # e.g., Specific app name
+version = ""
+location = "" # e.g., SharedPreferences, SQLite DB, Plist files, External Storage
+endpoints = []
+technologies = []
+
+[details]
+description = ""
+impact = ""
+root_cause = ""
+
+[reproduction]
+preconditions = ""
+steps = [
+    "Identify where the mobile application stores sensitive data (e.g., credentials, PII, API keys, session tokens).",
+    "Common locations include SharedPreferences/NSUserDefaults, SQLite databases, Plist files, files in internal/external storage, Keychain/Keystore (if misused).",
+    "Gain access to the device's file system (e.g., via ADB for Android, jailbreak/iFunBox for iOS, or by analyzing app backups).",
+    "Examine the identified storage locations for sensitive data stored in clear text, weakly encrypted, or improperly protected.",
+    "Verify if encryption keys are hardcoded or easily discoverable within the app's code or files."
+]
+payload = ""
+screenshots = []
+
+[proof_of_concept]
+code = ""
+curl_command = ""
+
+[remediation]
+recommendation = "Avoid storing sensitive data on the device whenever possible. If storage is necessary, use platform-provided secure storage mechanisms (e.g., Android Keystore, iOS Keychain) correctly. Encrypt sensitive data at rest using strong encryption algorithms and securely manage encryption keys (avoid hardcoding). Do not store sensitive data in logs or publicly accessible locations like external storage without proper protection. Apply appropriate file permissions."
+code_fix = ""
+estimated_effort = ""
+timeline = ""
+
+[references]
+cve_ids = []
+external_references = [
+    "https://owasp.org/www-project-mobile-top-10/2016-risks/m2-insecure-data-storage"
+]
+internal_references = []
+
+[communication]
+disclosed_to = ""
+disclosed_on = ""
+response = ""
+
+[tracking]
+issue_tracker_id = ""
+pull_request = ""
+fix_version = ""
+fix_date = ""
+verification_date = ""
+
+[compliance]
+regulatory_impact = []
+business_impact = ""
+data_breach_risk = false
+
+[additional_info]
+notes = ""
+tags = []
+linked_findings = []

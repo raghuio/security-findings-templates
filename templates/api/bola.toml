@@ -1,0 +1,87 @@
+# Master Vulnerability Finding Template
+# Format: TOML (Tom's Obvious Minimal Language)
+# Version: 1.0.0
+# Description: Generic vulnerability finding template for cross-language compatibility
+
+[metadata]
+finding_id = ""
+title = "API Broken Object Level Authorization (BOLA)"
+date_discovered = ""
+date_reported = ""
+assessment_id = ""
+author = ""
+reviewer = ""
+client_id = ""
+status = ""
+confidentiality = ""
+
+[classification]
+severity = "High"
+cvss_score = 8.1 # Can vary, CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N (Authenticated user can access/modify other users' objects)
+cvss_vector = "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N"
+cwe_id = ""
+cwe_name = ""
+owasp_category = "API1:2023-Broken Object Level Authorization"
+
+[affected_components]
+system = ""
+component = ""
+version = ""
+location = ""
+endpoints = []
+technologies = []
+
+[details]
+description = ""
+impact = ""
+root_cause = ""
+
+[reproduction]
+preconditions = ""
+steps = [
+    "Identify API endpoints that accept an ID of an object in the request (e.g., /api/orders/{order_id}, /api/users/{user_id}/profile).",
+    "Authenticate as User A and access an object belonging to User A (e.g., /api/orders/123). Note the request format and ID.",
+    "Attempt to access an object belonging to User B by replacing User A's object ID with User B's object ID in the request (e.g., /api/orders/456, assuming order 456 belongs to User B).",
+    "Observe if the API grants access to User B's object, indicating a BOLA vulnerability."
+]
+payload = ""
+screenshots = []
+
+[proof_of_concept]
+code = ""
+curl_command = ""
+
+[remediation]
+recommendation = "Implement robust object-level authorization checks for every API request that accesses an object. Verify that the authenticated user has the necessary permissions for the specific object being accessed. Use random, non-guessable IDs for objects (e.g., UUIDs) to make enumeration harder, but do not rely on this as the sole protection. Authorization checks must be performed on the server-side."
+code_fix = ""
+estimated_effort = ""
+timeline = ""
+
+[references]
+cve_ids = []
+external_references = [
+    "https://owasp.org/API-Security/editions/2023/en/0xa1-broken-object-level-authorization/"
+]
+internal_references = []
+
+[communication]
+disclosed_to = ""
+disclosed_on = ""
+response = ""
+
+[tracking]
+issue_tracker_id = ""
+pull_request = ""
+fix_version = ""
+fix_date = ""
+verification_date = ""
+
+[compliance]
+regulatory_impact = []
+business_impact = ""
+data_breach_risk = false
+
+[additional_info]
+notes = ""
+tags = []
+linked_findings = []

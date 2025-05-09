@@ -1,0 +1,88 @@
+# Master Vulnerability Finding Template
+# Format: TOML (Tom's Obvious Minimal Language)
+# Version: 1.0.0
+# Description: Generic vulnerability finding template for cross-language compatibility
+
+[metadata]
+finding_id = ""
+title = "API Broken Authentication"
+date_discovered = ""
+date_reported = ""
+assessment_id = ""
+author = ""
+reviewer = ""
+client_id = ""
+status = ""
+confidentiality = ""
+
+[classification]
+severity = "Critical"
+cvss_score = 9.8
+cvss_vector = "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" # Unauthenticated access to sensitive functionality/data
+cwe_id = ""
+cwe_name = ""
+owasp_category = "API2:2023-Broken Authentication"
+
+[affected_components]
+system = ""
+component = ""
+version = ""
+location = ""
+endpoints = []
+technologies = []
+
+[details]
+description = ""
+impact = ""
+root_cause = ""
+
+[reproduction]
+preconditions = ""
+steps = [
+    "Identify API endpoints that should require authentication.",
+    "Attempt to access these endpoints without providing any authentication tokens or credentials.",
+    "Test for weak or predictable credentials, or flaws in the credential recovery process.",
+    "Check if session tokens are long-lived, not invalidated after logout, or susceptible to fixation or hijacking.",
+    "Verify if JWTs are properly validated (e.g., signature, algorithm, expiration)."
+]
+payload = ""
+screenshots = []
+
+[proof_of_concept]
+code = ""
+curl_command = ""
+
+[remediation]
+recommendation = "Implement strong authentication mechanisms for all API endpoints that require it. Use industry-standard protocols like OAuth 2.0 or OpenID Connect. Enforce strong password policies and multi-factor authentication. Ensure session tokens are short-lived, securely managed, and invalidated upon logout or timeout. Properly validate JWTs, including signature, algorithm (alg header), and expiration (exp claim)."
+code_fix = ""
+estimated_effort = ""
+timeline = ""
+
+[references]
+cve_ids = []
+external_references = [
+    "https://owasp.org/API-Security/editions/2023/en/0xa2-broken-authentication/"
+]
+internal_references = []
+
+[communication]
+disclosed_to = ""
+disclosed_on = ""
+response = ""
+
+[tracking]
+issue_tracker_id = ""
+pull_request = ""
+fix_version = ""
+fix_date = ""
+verification_date = ""
+
+[compliance]
+regulatory_impact = []
+business_impact = ""
+data_breach_risk = false
+
+[additional_info]
+notes = ""
+tags = []
+linked_findings = []
