@@ -1,0 +1,84 @@
+
+[metadata]
+finding_id = ""  
+title = "API Lack of Resources & Rate Limiting"
+date_discovered = ""  
+date_reported = ""  
+assessment_id = ""  
+author = ""  
+reviewer = ""  
+client_id = ""  
+status = ""  
+confidentiality = ""  
+
+[classification]
+severity = "Medium"
+cvss_score = 5.3 
+cvss_vector = "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L"
+cwe_id = ""  
+cwe_name = ""  
+owasp_category = "API4:2023-Unrestricted Resource Consumption"
+
+[affected_components]
+system = ""  
+component = ""  
+version = ""  
+location = ""  
+endpoints = []  
+technologies = []  
+
+[details]
+description = ""  
+impact = ""  
+root_cause = ""  
+
+[reproduction]
+preconditions = ""  
+steps = [
+    "Identify API endpoints, particularly those that are computationally expensive or return large amounts of data.",
+    "Send a large number of requests to these endpoints in a short period, exceeding normal usage patterns.",
+    "Test for lack of limits on request payload size, number of records requested per page (pagination), or frequency of requests.",
+    "Attempt to request extremely large files or trigger operations that consume significant server resources (CPU, memory, network bandwidth).",
+    "Observe if the API server becomes slow, unresponsive, or crashes, indicating a lack of resource or rate limiting."
+]
+payload = ""  
+screenshots = []  
+
+[proof_of_concept]
+code = ""  
+curl_command = ""  
+
+[remediation]
+recommendation = "Implement rate limiting on API requests based on IP address, user account, or API key. Define acceptable request quotas and throttling policies. Set limits on request payload sizes, response sizes, and the number of records returned in a single request (enforce pagination). Implement timeouts for API requests. Monitor resource utilization and implement alerts for unusual consumption patterns."
+code_fix = ""  
+estimated_effort = ""  
+timeline = ""  
+
+[references]
+cve_ids = []  
+external_references = [
+    "https://owasp.org/API-Security/editions/2023/en/0xa4-unrestricted-resource-consumption/"
+]
+internal_references = []  
+
+[communication]
+disclosed_to = ""  
+disclosed_on = ""  
+response = ""  
+
+[tracking]
+issue_tracker_id = ""  
+pull_request = ""  
+fix_version = ""  
+fix_date = ""  
+verification_date = ""  
+
+[compliance]
+regulatory_impact = []  
+business_impact = ""  
+data_breach_risk = false  
+
+[additional_info]
+notes = ""  
+tags = []  
+linked_findings = []  
