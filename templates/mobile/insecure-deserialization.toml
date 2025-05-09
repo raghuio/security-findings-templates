@@ -1,7 +1,3 @@
-# Master Vulnerability Finding Template
-# Format: TOML (Tom's Obvious Minimal Language)
-# Version: 1.0.0
-# Description: Generic vulnerability finding template for cross-language compatibility
 
 [metadata]
 finding_id = ""
@@ -16,20 +12,20 @@ status = ""
 confidentiality = ""
 
 [classification]
-severity = "High" # Can be Critical depending on impact
-cvss_score = 8.8 # Example: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H (User interaction needed to process malicious serialized object)
+severity = "High" 
+cvss_score = 8.8 
 cvss_vector = "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
 cwe_id = ""
 cwe_name = ""
-owasp_category = "M8: Security Decisions Via Untrusted Inputs" # OWASP Mobile Top 10 2016. Also relates to A08:2021-Software and Data Integrity Failures from Web Top 10.
+owasp_category = "M8: Security Decisions Via Untrusted Inputs" 
 
 [affected_components]
-system = "" # e.g., Android, iOS
-component = "" # e.g., Specific app name
+system = "" 
+component = "" 
 version = ""
-location = "" # e.g., Data storage, IPC mechanism
+location = "" 
 endpoints = []
-technologies = [] # e.g., Java Serialization, NSCoding
+technologies = [] 
 
 [details]
 description = ""

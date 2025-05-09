@@ -1,7 +1,3 @@
-# Master Vulnerability Finding Template
-# Format: TOML (Tom's Obvious Minimal Language)
-# Version: 1.0.0
-# Description: Generic vulnerability finding template for cross-language compatibility
 
 [metadata]
 finding_id = ""
@@ -16,18 +12,18 @@ status = ""
 confidentiality = ""
 
 [classification]
-severity = "High" # Can be Critical if known exploits exist for the outdated versions
-cvss_score = 7.5 # Example: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N (Remote unauthenticated attacker can exploit known vulnerability)
-cvss_vector = "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N" # This can vary greatly
-cwe_id = "" # e.g., CWE-937: Use of Outdated Components with Known Vulnerabilities
+severity = "High" 
+cvss_score = 7.5 
+cvss_vector = "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N" 
+cwe_id = "" 
 cwe_name = ""
-owasp_category = "A06:2021-Vulnerable and Outdated Components" # From Web Top 10, but principle applies broadly
+owasp_category = "A06:2021-Vulnerable and Outdated Components" 
 
 [affected_components]
-system = "" # e.g., Server OS, Network Device Firmware
-component = "" # e.g., Apache Web Server, OpenSSL, Linux Kernel, Cisco IOS
-version = "" # Detected version
-location = "" # e.g., IP Address, Hostname
+system = "" 
+component = "" 
+version = "" 
+location = "" 
 endpoints = []
 technologies = []
 
@@ -59,7 +55,7 @@ estimated_effort = ""
 timeline = ""
 
 [references]
-cve_ids = [] # List relevant CVE IDs for the outdated component
+cve_ids = [] 
 external_references = [
     "https://owasp.org/Top10/A06_2021-Vulnerable_and_Outdated_Components/",
     "https://cve.mitre.org/",

@@ -1,7 +1,3 @@
-# Master Vulnerability Finding Template
-# Format: TOML (Tom's Obvious Minimal Language)
-# Version: 1.0.0
-# Description: Generic vulnerability finding template for cross-language compatibility
 
 [metadata]
 finding_id = ""
@@ -17,11 +13,11 @@ confidentiality = ""
 
 [classification]
 severity = "High"
-cvss_score = 7.5 # Can vary based on impact, assuming read access to sensitive data
-cvss_vector = "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N" # Authenticated user, can view unauthorized data
+cvss_score = 7.5 
+cvss_vector = "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N" 
 cwe_id = ""
 cwe_name = ""
-owasp_category = "A01:2021-Broken Access Control" # IDOR is a common example of BAC
+owasp_category = "A01:2021-Broken Access Control" 
 
 [affected_components]
 system = ""
@@ -61,7 +57,7 @@ timeline = ""
 [references]
 cve_ids = []
 external_references = [
-    "https://owasp.org/www-project-top-ten/2017/A5_2017-Broken_Access_Control", # IDOR was more explicitly called out in older OWASP Top 10s
+    "https://owasp.org/www-project-top-ten/2017/A5_2017-Broken_Access_Control", 
     "https://cheatsheetseries.owasp.org/cheatsheets/Insecure_Direct_Object_Reference_Prevention_Cheat_Sheet.html"
 ]
 internal_references = []
