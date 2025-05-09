@@ -1,3 +1,4 @@
+# Security Findings Templates
 
 A collection of security vulnerability templates for pentesters, bug bounty hunters, and security researchers. Following templates can also be used for automation with various tools.
 
@@ -39,3 +40,19 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 - OWASP for their security testing methodologies
 - The security research community for sharing knowledge.
+
+
+## Exporters Tools:
+
+### Convert to Markdown
+
+Convert the toml to markdown
+
+``` bash
+pip install --user toml
+```
+
+``` bash
+python exporters/markdown-exporter.py templates/web/sql-injection.toml > sql-finding.md
+```
+
