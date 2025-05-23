@@ -1,0 +1,42 @@
+[metadata]
+finding_id = ""
+title = ""
+date_discovered = "" # YYYY-MM-DD
+date_reported = "" # YYYY-MM-DD
+assessment_id = ""
+author = ""
+client_id = ""
+status = "" # E.g., "open", "in_progress", "fixed", "closed"
+
+[classification]
+severity = "" # E.g., "critical", "high", "medium", "low", "informational"
+cvss_score = 0.0
+cvss_vector = "" # CVSS v3.1/v4 vector string
+cwe_id = "" # Numeric portion only
+owasp_category = "" # E.g., "A01:2021-Broken Access Control"
+
+[affected_components]
+system = ""
+component = ""
+version = ""
+location = "" # E.g., URL, file path, code line
+endpoints = [] # Array of strings
+
+[details]
+description = ""
+impact = ""
+
+[reproduction]
+steps = [] # Array of strings
+payload = ""
+
+[proof_of_concept]
+code = ""
+curl_command = ""
+
+[remediation]
+recommendation = ""
+
+[references]
+cve_ids = [] # Array of CVE IDs
+external_references = [] # Array of URLs

@@ -1,84 +1,57 @@
-
 [metadata]
-finding_id = ""  
-title = "Stored Cross-Site Scripting (XSS)"  
-date_discovered = ""  
-date_reported = ""  
-assessment_id = ""  
-author = ""  
-reviewer = ""  
-client_id = ""  
-status = ""  
-confidentiality = ""  
+finding_id = ""
+title = "Stored Cross-Site Scripting (XSS)"
+date_discovered = ""
+date_reported = ""
+assessment_id = ""
+author = ""
+client_id = ""
+status = ""
 
 [classification]
-severity = "High"  
-cvss_score = 7.2  
-cvss_vector = "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:L/I:L/A:N"  
-cwe_id = ""  
-cwe_name = ""  
-owasp_category = "A03:2021-Injection"  
+severity = "High"
+cvss_score = 7.2
+cvss_vector = "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:L/I:L/A:N"
+cwe_id = ""
+owasp_category = "A03:2021-Injection"
 
 [affected_components]
-system = ""  
-component = ""  
-version = ""  
-location = ""  
-endpoints = []  
-technologies = []  
+system = ""
+component = ""
+version = ""
+location = ""
+endpoints = []
 
 [details]
-description = ""  
-impact = ""  
-root_cause = ""  
+description = """
+The OWASP guide [1] gives the following description for Cross-Site Scripting:
+Cross-Site Scripting (XSS) attacks are a type of injection, in which malicious scripts are injected into otherwise benign and trusted web sites. XSS attacks occur when an attacker uses a web application to send malicious code, generally in the form of a browser side script, to a different end user. Flaws that allow these attacks to succeed are quite widespread and occur anywhere a web application uses input from a user within the output it generates without validating or encoding it.
+An attacker can use XSS to send a malicious script to an unsuspecting user. The end user’s browser has no way to know that the script should not be trusted, and will execute the script. Because it thinks the script came from a trusted source, the malicious script can access any cookies, session tokens, or other sensitive information retained by the browser and used with that site. These scripts can even rewrite the content of the HTML page."""
+impact = ""
 
 [reproduction]
-preconditions = ""  
 steps = [
     "Identify an input field that stores and reflects user-supplied data without proper sanitization (e.g., comment section, user profile).",
     "Inject a malicious script payload (e.g., <script>alert('XSS')</script>) into the input field.",
     "Submit the input.",
     "Observe that the script executes when the page displaying the stored data is loaded by any user."
-]  
-payload = ""  
-screenshots = []  
+]
+payload = ""
 
 [proof_of_concept]
-code = ""  
-curl_command = ""  
+code = ""
+curl_command = ""
 
 [remediation]
-recommendation = "Implement robust input validation and output encoding for all user-supplied data. Use context-aware encoding (e.g., HTML entity encoding for HTML context, JavaScript encoding for script context). Consider using a Content Security Policy (CSP) to mitigate XSS impact."  
-code_fix = ""  
-estimated_effort = ""  
-timeline = ""  
+recommendation = """
+The following is recommended to remediate XSS vulnerabilities:
+  - Never trust user input
+  - Never insert untrusted data except in allowed locations
+  - HTML escape before inserting untrusted data into HTML element content
+  - Use whitelists in place for Black lists for input filtering"""
 
 [references]
-cve_ids = []  
+cve_ids = []
 external_references = [
-    "https://owasp.org/www-community/attacks/xss/",
-    "https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html"
-]  
-internal_references = []  
-
-[communication]
-disclosed_to = ""  
-disclosed_on = ""  
-response = ""  
-
-[tracking]
-issue_tracker_id = ""  
-pull_request = ""  
-fix_version = ""  
-fix_date = ""  
-verification_date = ""  
-
-[compliance]
-regulatory_impact = []  
-business_impact = ""  
-data_breach_risk = false  
-
-[additional_info]
-notes = ""  
-tags = []  
-linked_findings = []  
+    "https://www.owasp.org/index.php/Cross-site_Scripting_(XSS)"
+]

@@ -1,4 +1,3 @@
-
 [metadata]
 finding_id = ""
 title = "Security Misconfiguration"
@@ -6,17 +5,14 @@ date_discovered = ""
 date_reported = ""
 assessment_id = ""
 author = ""
-reviewer = ""
 client_id = ""
 status = ""
-confidentiality = ""
 
 [classification]
-severity = "Medium" 
-cvss_score = 5.3 
+severity = "Medium"
+cvss_score = 5.3
 cvss_vector = "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N"
 cwe_id = ""
-cwe_name = ""
 owasp_category = "A05:2021-Security Misconfiguration"
 
 [affected_components]
@@ -25,15 +21,12 @@ component = ""
 version = ""
 location = ""
 endpoints = []
-technologies = []
 
 [details]
 description = ""
 impact = ""
-root_cause = ""
 
 [reproduction]
-preconditions = ""
 steps = [
     "Review server and application configurations for default credentials, unnecessary services enabled, verbose error messages, or improper security headers.",
     "Check for publicly accessible administrative interfaces or sensitive files (e.g., .git directory, configuration backups).",
@@ -41,7 +34,6 @@ steps = [
     "Test for common misconfigurations like enabled directory listing, or missing HTTP security headers (e.g., Strict-Transport-Security, Content-Security-Policy)."
 ]
 payload = ""
-screenshots = []
 
 [proof_of_concept]
 code = ""
@@ -49,9 +41,6 @@ curl_command = ""
 
 [remediation]
 recommendation = "Implement a secure hardening process for all components. Regularly review and update configurations. Disable unnecessary features and services. Use strong, unique credentials and avoid defaults. Implement appropriate HTTP security headers. Ensure software is kept up-to-date with security patches. Restrict access to administrative interfaces and sensitive files."
-code_fix = ""
-estimated_effort = ""
-timeline = ""
 
 [references]
 cve_ids = []
@@ -60,26 +49,3 @@ external_references = [
     "https://cheatsheetseries.owasp.org/cheatsheets/Attack_Surface_Analysis_Cheat_Sheet.html",
     "https://cheatsheetseries.owasp.org/cheatsheets/HTTP_Headers_Cheat_Sheet.html"
 ]
-internal_references = []
-
-[communication]
-disclosed_to = ""
-disclosed_on = ""
-response = ""
-
-[tracking]
-issue_tracker_id = ""
-pull_request = ""
-fix_version = ""
-fix_date = ""
-verification_date = ""
-
-[compliance]
-regulatory_impact = []
-business_impact = ""
-data_breach_risk = false
-
-[additional_info]
-notes = ""
-tags = []
-linked_findings = []

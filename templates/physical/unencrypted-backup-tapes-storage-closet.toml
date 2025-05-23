@@ -1,0 +1,43 @@
+[metadata]
+finding_id = ""
+title = "Unencrypted Backups Tapes (Storage Closet)"
+date_discovered = "" # YYYY-MM-DD
+date_reported = "" # YYYY-MM-DD
+assessment_id = ""
+author = ""
+client_id = ""
+status = "" # E.g., "open", "in_progress", "fixed", "closed"
+
+[classification]
+severity = "Critical" # E.g., "critical", "high", "medium", "low", "informational"
+cvss_score = 0.0 # Adjust as needed
+cvss_vector = "" # CVSS v3.1/v4 vector string
+cwe_id = "" # Numeric portion only
+owasp_category = "" 
+
+[affected_components]
+system = ""
+component = ""
+version = ""
+location = "" # E.g., URL, file path, code line
+endpoints = [] # Array of strings
+
+[details]
+description = """During the physical component of the assessment the consultant identified unencrypted backups stored in an unlocked closet. This could allow an attacker to steal thousands of <<Super Secret datas>>.
+This is a critical risk to any organization. The references discussion outlines examples of this issue from the real world."""
+impact = ""
+
+[reproduction]
+steps = ["The following pictures show the backup tape storage:"]
+payload = ""
+
+[proof_of_concept]
+code = ""
+curl_command = ""
+
+[remediation]
+recommendation = ""
+
+[references]
+cve_ids = [] # Array of CVE IDs
+external_references = [] # Array of URLs

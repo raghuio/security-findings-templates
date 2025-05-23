@@ -1,0 +1,42 @@
+[metadata]
+finding_id = ""
+title = "Lack of Egress Filtering"
+date_discovered = "" # YYYY-MM-DD
+date_reported = "" # YYYY-MM-DD
+assessment_id = ""
+author = ""
+client_id = ""
+status = "" # E.g., "open", "in_progress", "fixed", "closed"
+
+[classification]
+severity = "Medium" # E.g., "critical", "high", "medium", "low", "informational"
+cvss_score = 0.0 # Adjust as needed
+cvss_vector = "" # CVSS v3.1/v4 vector string
+cwe_id = "" # Numeric portion only
+owasp_category = "" 
+
+[affected_components]
+system = ""
+component = ""
+version = ""
+location = "" # E.g., URL, file path, code line
+endpoints = [] # Array of strings
+
+[details]
+description = """Egress filtering is used to restrict and monitor outbound traffic from one network to another. During the internal assessment, the consultants discovered it was able to make arbitrary connections to hosts on the Internet. This showed a lack of egress filtering in place on <<full_company_name>>'s network. An adversary can leverage this lack of egress filtering to exfiltrate data from the network."""
+impact = ""
+
+[reproduction]
+steps = [] 
+payload = ""
+
+[proof_of_concept]
+code = ""
+curl_command = ""
+
+[remediation]
+recommendation = """It is recommended that <<full_company_name>> implement an egress policy. The policy should deny all traffic by default and only allow approved traffic. Only traffic necessary for business reasons should be allow out while all other traffic is denied."""
+
+[references]
+cve_ids = [] # Array of CVE IDs
+external_references = [] # Array of URLs

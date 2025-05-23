@@ -1,39 +1,32 @@
-
 [metadata]
-finding_id = ""  
+finding_id = ""
 title = "XML External Entity (XXE) Injection"
-date_discovered = ""  
-date_reported = ""  
-assessment_id = ""  
-author = ""  
-reviewer = ""  
-client_id = ""  
-status = ""  
-confidentiality = ""  
+date_discovered = ""
+date_reported = ""
+assessment_id = ""
+author = ""
+client_id = ""
+status = ""
 
 [classification]
 severity = "High"
-cvss_score = 9.1 
+cvss_score = 9.1
 cvss_vector = "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N"
-cwe_id = ""  
-cwe_name = ""  
-owasp_category = "A05:2017-XML External Entities (XXE)" 
+cwe_id = ""
+owasp_category = "A05:2017-XML External Entities (XXE)"
 
 [affected_components]
-system = ""  
-component = ""  
-version = ""  
-location = ""  
-endpoints = []  
-technologies = []  
+system = ""
+component = ""
+version = ""
+location = ""
+endpoints = []
 
 [details]
-description = ""  
-impact = ""  
-root_cause = ""  
+description = """An XML External Entity attack is a type of attack against an application that parses XML input. This attack occurs when XML input containing a reference to an external entity is processed by a weakly configured XML parser. This attack may lead to the disclosure of confidential data, denial of service, port scanning from the perspective of the machine where the parser is located, and other system impacts."""
+impact = ""
 
 [reproduction]
-preconditions = ""  
 steps = [
     "Identify an XML parser or input point that accepts XML data (e.g., file upload, API endpoint).",
     "Craft an XML payload containing a malicious Document Type Definition (DTD) that defines an external entity pointing to a sensitive local file (e.g., /etc/passwd) or an internal network resource.",
@@ -42,46 +35,15 @@ steps = [
     "Submit the malicious XML payload to the application.",
     "Observe if the application's response includes the content of the targeted file or if an out-of-band interaction occurs, indicating successful XXE."
 ]
-payload = ""  
-screenshots = []  
+payload = ""
 
 [proof_of_concept]
-code = ""  
-curl_command = ""  
+code = ""
+curl_command = ""
 
 [remediation]
-recommendation = "Disable DTDs (External Entities) completely in the XML parser. If DTDs cannot be disabled, then disable external entities and external parameter entities. Use well-vetted libraries for XML parsing and ensure they are configured securely by default. Prefer simpler data formats like JSON if possible and avoid XML processing of untrusted data."
-code_fix = ""  
-estimated_effort = ""  
-timeline = ""  
+recommendation = ""
 
 [references]
-cve_ids = []  
-external_references = [
-    "https://owasp.org/www-community/vulnerabilities/XML_External_Entity_(XXE)_Processing",
-    "https://cheatsheetseries.owasp.org/cheatsheets/XML_External_Entity_Prevention_Cheat_Sheet.html",
-    "https://portswigger.net/web-security/xxe"
-]
-internal_references = []  
-
-[communication]
-disclosed_to = ""  
-disclosed_on = ""  
-response = ""  
-
-[tracking]
-issue_tracker_id = ""  
-pull_request = ""  
-fix_version = ""  
-fix_date = ""  
-verification_date = ""  
-
-[compliance]
-regulatory_impact = []  
-business_impact = ""  
-data_breach_risk = false  
-
-[additional_info]
-notes = ""  
-tags = []  
-linked_findings = []  
+cve_ids = []
+external_references = ["https://www.owasp.org/index.php/XML_External_Entity_(XXE)_Processing"]

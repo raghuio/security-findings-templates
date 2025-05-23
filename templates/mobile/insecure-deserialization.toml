@@ -1,4 +1,3 @@
-
 [metadata]
 finding_id = ""
 title = "Mobile Insecure Deserialization"
@@ -6,34 +5,28 @@ date_discovered = ""
 date_reported = ""
 assessment_id = ""
 author = ""
-reviewer = ""
 client_id = ""
 status = ""
-confidentiality = ""
 
 [classification]
-severity = "High" 
-cvss_score = 8.8 
+severity = "High"
+cvss_score = 8.8
 cvss_vector = "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
 cwe_id = ""
-cwe_name = ""
-owasp_category = "M8: Security Decisions Via Untrusted Inputs" 
+owasp_category = "M8: Security Decisions Via Untrusted Inputs"
 
 [affected_components]
-system = "" 
-component = "" 
+system = ""
+component = ""
 version = ""
-location = "" 
+location = ""
 endpoints = []
-technologies = [] 
 
 [details]
 description = ""
 impact = ""
-root_cause = ""
 
 [reproduction]
-preconditions = ""
 steps = [
     "Identify where the mobile application deserializes data from untrusted sources (e.g., files, network, IPC messages).",
     "Understand the serialization format used (e.g., Java Objects, NSCoding archives, JSON/XML with custom object mapping).",
@@ -42,7 +35,6 @@ steps = [
     "Observe the application's behavior for signs of successful exploitation."
 ]
 payload = ""
-screenshots = []
 
 [proof_of_concept]
 code = ""
@@ -50,9 +42,6 @@ curl_command = ""
 
 [remediation]
 recommendation = "Avoid deserializing data from untrusted sources. If deserialization is necessary, use safe, data-only serialization formats (e.g., JSON, Protobuf) and avoid formats that can deserialize arbitrary object types. Implement strict type checking during deserialization. If using native serialization (like Java Serialization or NSCoding), consider using look-ahead deserialization or whitelisting allowed classes. Keep libraries used for serialization/deserialization updated."
-code_fix = ""
-estimated_effort = ""
-timeline = ""
 
 [references]
 cve_ids = []
@@ -60,26 +49,3 @@ external_references = [
     "https://owasp.org/www-project-mobile-top-10/2016-risks/m8-security-decisions-via-untrusted-inputs",
     "https://owasp.org/www-community/vulnerabilities/Deserialization_of_untrusted_data"
 ]
-internal_references = []
-
-[communication]
-disclosed_to = ""
-disclosed_on = ""
-response = ""
-
-[tracking]
-issue_tracker_id = ""
-pull_request = ""
-fix_version = ""
-fix_date = ""
-verification_date = ""
-
-[compliance]
-regulatory_impact = []
-business_impact = ""
-data_breach_risk = false
-
-[additional_info]
-notes = ""
-tags = []
-linked_findings = []

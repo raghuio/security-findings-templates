@@ -1,4 +1,3 @@
-
 [metadata]
 finding_id = ""
 title = "Server-Side Request Forgery (SSRF)"
@@ -6,34 +5,28 @@ date_discovered = ""
 date_reported = ""
 assessment_id = ""
 author = ""
-reviewer = ""
 client_id = ""
 status = ""
-confidentiality = ""
 
 [classification]
-severity = "High" 
-cvss_score = 8.6 
+severity = "High"
+cvss_score = 8.6
 cvss_vector = "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:L/A:N"
-cwe_id = "" 
-cwe_name = ""
+cwe_id = ""
 owasp_category = "A10:2021-Server-Side Request Forgery (SSRF)"
 
 [affected_components]
 system = ""
 component = ""
 version = ""
-location = "" 
+location = ""
 endpoints = []
-technologies = []
 
 [details]
 description = ""
 impact = ""
-root_cause = ""
 
 [reproduction]
-preconditions = ""
 steps = [
     "Identify application functionality that makes requests to a user-supplied URL or reads data from a user-supplied hostname/IP address (e.g., webhooks, PDF generators from URL, file importers).",
     "Attempt to provide URLs or IP addresses that point to internal network resources (e.g., http://localhost/, http://127.0.0.1, http://169.254.169.254/latest/meta-data/, internal IP ranges like 10.x.x.x, 192.168.x.x).",
@@ -41,7 +34,6 @@ steps = [
     "Observe the application's response or behavior for indications that the server made a request to the internal resource (e.g., error messages disclosing internal banners, successful retrieval of internal data, or time delays indicating connection attempts)."
 ]
 payload = ""
-screenshots = []
 
 [proof_of_concept]
 code = ""
@@ -49,9 +41,6 @@ curl_command = ""
 
 [remediation]
 recommendation = "Implement strict input validation and sanitization for all user-supplied URLs or hostnames. Use an allow-list of permitted domains, IP addresses, and URL schemes. Disable unused URL schemes. If requests to internal resources are necessary, ensure they are made through a properly configured and hardened proxy. Avoid directly reflecting the server's response from the fetched URL to the user. Ensure network segmentation limits the impact of a successful SSRF."
-code_fix = ""
-estimated_effort = ""
-timeline = ""
 
 [references]
 cve_ids = []
@@ -60,26 +49,3 @@ external_references = [
     "https://cheatsheetseries.owasp.org/cheatsheets/Server_Side_Request_Forgery_Prevention_Cheat_Sheet.html",
     "https://cwe.mitre.org/data/definitions/918.html"
 ]
-internal_references = []
-
-[communication]
-disclosed_to = ""
-disclosed_on = ""
-response = ""
-
-[tracking]
-issue_tracker_id = ""
-pull_request = ""
-fix_version = ""
-fix_date = ""
-verification_date = ""
-
-[compliance]
-regulatory_impact = []
-business_impact = ""
-data_breach_risk = false
-
-[additional_info]
-notes = ""
-tags = []
-linked_findings = []

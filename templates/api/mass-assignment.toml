@@ -1,4 +1,3 @@
-
 [metadata]
 finding_id = ""
 title = "API Mass Assignment"
@@ -6,18 +5,15 @@ date_discovered = ""
 date_reported = ""
 assessment_id = ""
 author = ""
-reviewer = ""
 client_id = ""
 status = ""
-confidentiality = ""
 
 [classification]
-severity = "Medium" 
-cvss_score = 6.5 
+severity = "Medium"
+cvss_score = 6.5
 cvss_vector = "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N"
 cwe_id = ""
-cwe_name = ""
-owasp_category = "API6:2023-Server Side Request Forgery" 
+owasp_category = "API6:2023-Server Side Request Forgery"
 
 [affected_components]
 system = ""
@@ -25,15 +21,12 @@ component = ""
 version = ""
 location = ""
 endpoints = []
-technologies = []
 
 [details]
 description = ""
 impact = ""
-root_cause = ""
 
 [reproduction]
-preconditions = ""
 steps = [
     "Identify API endpoints that accept data in the request body to create or update objects (e.g., POST /api/users, PUT /api/items/{id}).",
     "Analyze the object structure and identify properties that should not be directly settable by users (e.g., 'isAdmin', 'balance', 'role').",
@@ -42,7 +35,6 @@ steps = [
     "Observe if the API creates/updates the object with the unauthorized property values."
 ]
 payload = ""
-screenshots = []
 
 [proof_of_concept]
 code = ""
@@ -50,36 +42,10 @@ curl_command = ""
 
 [remediation]
 recommendation = "Avoid binding incoming data directly to internal objects. Use an allow-list approach (DTOs - Data Transfer Objects or ViewModels) to specify exactly which properties can be set by the client. Alternatively, use a deny-list for properties that should never be updated, but allow-lists are generally safer. Ensure that business logic, not just the client, dictates which properties can be modified."
-code_fix = ""
-estimated_effort = ""
-timeline = ""
 
 [references]
 cve_ids = []
 external_references = [
-    "https://owasp.org/API-Security/editions/2023/en/0xa6-server-side-request-forgery/", 
-    "https://owasp.org/API-Security/editions/2019/en/api6-mass-assignment/" 
+    "https://owasp.org/API-Security/editions/2023/en/0xa6-server-side-request-forgery/",
+    "https://owasp.org/API-Security/editions/2019/en/api6-mass-assignment/"
 ]
-internal_references = []
-
-[communication]
-disclosed_to = ""
-disclosed_on = ""
-response = ""
-
-[tracking]
-issue_tracker_id = ""
-pull_request = ""
-fix_version = ""
-fix_date = ""
-verification_date = ""
-
-[compliance]
-regulatory_impact = []
-business_impact = ""
-data_breach_risk = false
-
-[additional_info]
-notes = ""
-tags = []
-linked_findings = []

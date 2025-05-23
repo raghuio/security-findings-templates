@@ -1,4 +1,3 @@
-
 [metadata]
 finding_id = ""
 title = "Infrastructure: Missing or Improper Network Segmentation"
@@ -6,34 +5,28 @@ date_discovered = ""
 date_reported = ""
 assessment_id = ""
 author = ""
-reviewer = ""
 client_id = ""
 status = ""
-confidentiality = ""
 
 [classification]
-severity = "Medium" 
-cvss_score = 6.8 
+severity = "Medium"
+cvss_score = 6.8
 cvss_vector = "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:L/A:N"
-cwe_id = "" 
-cwe_name = ""
-owasp_category = "N/A" 
+cwe_id = ""
+owasp_category = "N/A"
 
 [affected_components]
-system = "" 
-component = "" 
+system = ""
+component = ""
 version = ""
-location = "" 
+location = ""
 endpoints = []
-technologies = []
 
 [details]
 description = ""
 impact = ""
-root_cause = ""
 
 [reproduction]
-preconditions = ""
 steps = [
     "Review network diagrams and firewall rule sets to understand the intended network segmentation.",
     "Perform network scanning and host discovery from different network segments (e.g., guest network, user network, DMZ, internal trusted network).",
@@ -42,7 +35,6 @@ steps = [
     "Check for flat network architectures where critical assets are not isolated from general user or less trusted networks."
 ]
 payload = ""
-screenshots = []
 
 [proof_of_concept]
 code = ""
@@ -50,9 +42,6 @@ curl_command = ""
 
 [remediation]
 recommendation = "Implement a defense-in-depth network segmentation strategy. Isolate critical systems and sensitive data in dedicated network segments with strict access controls. Apply the principle of least privilege to network traffic, only allowing necessary communication between segments. Regularly review and audit firewall rules and network configurations. Use technologies like VLANs, firewalls, and Network Access Control (NAC) to enforce segmentation."
-code_fix = ""
-estimated_effort = ""
-timeline = ""
 
 [references]
 cve_ids = []
@@ -60,26 +49,3 @@ external_references = [
     "https://www.cisa.gov/news-events/news/understanding-network-segmentation",
     "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-41r1.pdf"
 ]
-internal_references = []
-
-[communication]
-disclosed_to = ""
-disclosed_on = ""
-response = ""
-
-[tracking]
-issue_tracker_id = ""
-pull_request = ""
-fix_version = ""
-fix_date = ""
-verification_date = ""
-
-[compliance]
-regulatory_impact = []
-business_impact = ""
-data_breach_risk = false
-
-[additional_info]
-notes = ""
-tags = []
-linked_findings = []

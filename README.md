@@ -4,6 +4,11 @@ A collection of security vulnerability templates for pentesters, bug bounty hunt
 
 > Note: The following project just started and all the **work is in progress [WIP]**. Breaking changes can be expected.
 
+## Demo:
+https://findtmp.pages.dev/
+
+## Purpose
+
 This repository aims to:
 
 1. **Save time** by providing ready-to-use vulnerability templates
@@ -12,9 +17,13 @@ This repository aims to:
 4. **Facilitate customization** by providing a base template that can be extended
 5. **Support multiple export formats** for integration with various tools and workflows
 
+## Features
+
 - **TOML-based templates**: Human-readable, machine-parsable format
 - **Categorized findings**: Web, API, Mobile, Infrastructure, and more
 - **Extensible structure**: Fork and customize to your needs
+
+## Template Structure
 
 The master template includes these key sections:
 
@@ -28,19 +37,9 @@ The master template includes these key sections:
 - **Proof of Concept**: Code or commands demonstrating the issue
 - **Remediation**: Recommendations and example fixes
 - **References**: CVEs and other reference materials
-- **Communication**: Tracking disclosure details
-- **Tracking**: Issue tracking references
-- **Compliance**: Regulatory impacts
-- **Additional Info**: Notes and related findings
+
+
 Easy readable and less error prone. Additionally, it can be easily converted to markdown, PDF etc.
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-- OWASP for their security testing methodologies
-- The security research community for sharing knowledge.
-
 
 ## Exporters Tools:
 
@@ -56,3 +55,20 @@ pip install --user toml
 python exporters/markdown-exporter.py templates/web/sql-injection.toml > sql-finding.md
 ```
 
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Disclaimer
+
+Material is provided as is, use at your own risk. Authors and publishers are not liable for any direct or indirect damages caused by direct or indirect use of provided material.
+
+## Acknowledgments
+
+- OWASP for their security testing methodologies
+- The security research community for sharing knowledge.
+- Thanks to the [Serpico Project](https://github.com/SerpicoProject/Serpico) for their work, from which some of the templates in this project have been adapted.

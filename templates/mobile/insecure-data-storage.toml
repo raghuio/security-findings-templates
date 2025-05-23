@@ -1,4 +1,3 @@
-
 [metadata]
 finding_id = ""
 title = "Mobile Insecure Data Storage"
@@ -6,34 +5,28 @@ date_discovered = ""
 date_reported = ""
 assessment_id = ""
 author = ""
-reviewer = ""
 client_id = ""
 status = ""
-confidentiality = ""
 
 [classification]
-severity = "Medium" 
-cvss_score = 5.5 
+severity = "Medium"
+cvss_score = 5.5
 cvss_vector = "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N"
 cwe_id = ""
-cwe_name = ""
-owasp_category = "M2: Insecure Data Storage" 
+owasp_category = "M2: Insecure Data Storage"
 
 [affected_components]
-system = "" 
-component = "" 
+system = ""
+component = ""
 version = ""
-location = "" 
+location = ""
 endpoints = []
-technologies = []
 
 [details]
 description = ""
 impact = ""
-root_cause = ""
 
 [reproduction]
-preconditions = ""
 steps = [
     "Identify where the mobile application stores sensitive data (e.g., credentials, PII, API keys, session tokens).",
     "Common locations include SharedPreferences/NSUserDefaults, SQLite databases, Plist files, files in internal/external storage, Keychain/Keystore (if misused).",
@@ -42,7 +35,6 @@ steps = [
     "Verify if encryption keys are hardcoded or easily discoverable within the app's code or files."
 ]
 payload = ""
-screenshots = []
 
 [proof_of_concept]
 code = ""
@@ -50,35 +42,9 @@ curl_command = ""
 
 [remediation]
 recommendation = "Avoid storing sensitive data on the device whenever possible. If storage is necessary, use platform-provided secure storage mechanisms (e.g., Android Keystore, iOS Keychain) correctly. Encrypt sensitive data at rest using strong encryption algorithms and securely manage encryption keys (avoid hardcoding). Do not store sensitive data in logs or publicly accessible locations like external storage without proper protection. Apply appropriate file permissions."
-code_fix = ""
-estimated_effort = ""
-timeline = ""
 
 [references]
 cve_ids = []
 external_references = [
     "https://owasp.org/www-project-mobile-top-10/2016-risks/m2-insecure-data-storage"
 ]
-internal_references = []
-
-[communication]
-disclosed_to = ""
-disclosed_on = ""
-response = ""
-
-[tracking]
-issue_tracker_id = ""
-pull_request = ""
-fix_version = ""
-fix_date = ""
-verification_date = ""
-
-[compliance]
-regulatory_impact = []
-business_impact = ""
-data_breach_risk = false
-
-[additional_info]
-notes = ""
-tags = []
-linked_findings = []

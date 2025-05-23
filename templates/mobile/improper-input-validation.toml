@@ -1,39 +1,32 @@
-
 [metadata]
-finding_id = ""  
+finding_id = ""
 title = "Mobile Improper Input Validation"
-date_discovered = ""  
-date_reported = ""  
-assessment_id = ""  
-author = ""  
-reviewer = ""  
-client_id = ""  
-status = ""  
-confidentiality = ""  
+date_discovered = ""
+date_reported = ""
+assessment_id = ""
+author = ""
+client_id = ""
+status = ""
 
 [classification]
-severity = "Medium" 
-cvss_score = 6.1 
+severity = "Medium"
+cvss_score = 6.1
 cvss_vector = "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
-cwe_id = ""  
-cwe_name = ""  
-owasp_category = "M7: Client Code Quality" 
+cwe_id = ""
+owasp_category = "M7: Client Code Quality"
 
 [affected_components]
-system = ""  
-component = ""  
-version = ""  
-location = ""  
-endpoints = []  
-technologies = []  
+system = ""
+component = ""
+version = ""
+location = ""
+endpoints = []
 
 [details]
-description = ""  
-impact = ""  
-root_cause = ""  
+description = ""
+impact = ""
 
 [reproduction]
-preconditions = ""  
 steps = [
     "Identify all input vectors in the mobile application (e.g., text fields, IPC intents, custom URL schemes, QR code scanners, file inputs).",
     "Test these inputs with unexpected data types, overly long strings, special characters, and payloads designed to trigger specific vulnerabilities (e.g., SQL injection, XSS for WebViews, path traversal).",
@@ -41,45 +34,18 @@ steps = [
     "If an input is used to construct file paths, test for path traversal: ../../etc/hosts.",
     "Observe application crashes, unexpected behavior, or successful exploitation of secondary vulnerabilities (like XSS or SQLi)."
 ]
-payload = ""  
-screenshots = []  
+payload = ""
 
 [proof_of_concept]
-code = ""  
-curl_command = ""  
+code = ""
+curl_command = ""
 
 [remediation]
 recommendation = "Implement robust input validation on both client-side and server-side (if data is sent to a backend). Validate for type, length, format, and range. Use allow-lists for acceptable characters and patterns. Sanitize or encode data appropriately before it's used in sensitive contexts (e.g., SQL queries, HTML output in WebViews, file paths, commands). Be cautious with data received from IPC or custom URL schemes."
-code_fix = ""  
-estimated_effort = ""  
-timeline = ""  
 
 [references]
-cve_ids = []  
+cve_ids = []
 external_references = [
     "https://owasp.org/www-project-mobile-top-10/2016-risks/m7-client-code-quality",
     "https://owasp.org/www-community/Improper_data_validation"
 ]
-internal_references = []  
-
-[communication]
-disclosed_to = ""  
-disclosed_on = ""  
-response = ""  
-
-[tracking]
-issue_tracker_id = ""  
-pull_request = ""  
-fix_version = ""  
-fix_date = ""  
-verification_date = ""  
-
-[compliance]
-regulatory_impact = []  
-business_impact = ""  
-data_breach_risk = false  
-
-[additional_info]
-notes = ""  
-tags = []  
-linked_findings = []  

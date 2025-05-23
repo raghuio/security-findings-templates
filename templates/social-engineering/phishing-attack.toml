@@ -1,0 +1,43 @@
+[metadata]
+finding_id = ""
+title = "Phishing Attack"
+date_discovered = "" # YYYY-MM-DD
+date_reported = "" # YYYY-MM-DD
+assessment_id = ""
+author = ""
+client_id = ""
+status = "" # E.g., "open", "in_progress", "fixed", "closed"
+
+[classification]
+severity = "High" # E.g., "critical", "high", "medium", "low", "informational"
+cvss_score = 0.0 # Adjust as needed
+cvss_vector = "" # CVSS v3.1/v4 vector string
+cwe_id = "" # Numeric portion only
+owasp_category = "" 
+
+[affected_components]
+system = ""
+component = ""
+version = ""
+location = "" # E.g., URL, file path, code line
+endpoints = [] # Array of strings
+
+[details]
+description = """[1] Phishing is misrepresentation where the criminal uses social engineering to appear as a trusted identity. They leverage the trust to gain valuable information; usually details of accounts, or enough information to open accounts, obtain loans, or buy goods through e-commerce sites.
+[1] Up to 5% of users seem to be lured into these attacks, so it can be quite profitable for scammers – many of whom send millions of scam e-mails a day."""
+impact = ""
+
+[reproduction]
+steps = [] 
+payload = ""
+
+[proof_of_concept]
+code = ""
+curl_command = ""
+
+[remediation]
+recommendation = ""
+
+[references]
+cve_ids = [] # Array of CVE IDs
+external_references = ["https://www.owasp.org/index.php/Phishing"]

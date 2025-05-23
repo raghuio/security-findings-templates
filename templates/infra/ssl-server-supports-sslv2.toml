@@ -1,0 +1,44 @@
+[metadata]
+finding_id = ""
+title = "SSL Server Supports SSLv2"
+date_discovered = "" # YYYY-MM-DD
+date_reported = "" # YYYY-MM-DD
+assessment_id = ""
+author = ""
+client_id = ""
+status = "" # E.g., "open", "in_progress", "fixed", "closed"
+
+[classification]
+severity = "Medium" # E.g., "critical", "high", "medium", "low", "informational"
+cvss_score = 0.0 # Adjust as needed
+cvss_vector = "" # CVSS v3.1/v4 vector string
+cwe_id = "" # Numeric portion only
+owasp_category = "" # E.g., "A01:2021-Broken Access Control"
+
+[affected_components]
+system = ""
+component = ""
+version = ""
+location = "" # E.g., URL, file path, code line
+endpoints = [] # Array of strings
+
+[details]
+description = """As discussed in Section 4.1 of the PCI DSS, SSLv2 cannot be used and will result in a failure of the host. There are numerous security risks associated with SSLv2 including:
+  - No protection from against man-in-the-middle attacks during the handshake.
+  - Weak MAC Construction"""
+impact = ""
+
+[reproduction]
+steps = [] 
+payload = ""
+
+[proof_of_concept]
+code = ""
+curl_command = ""
+
+[remediation]
+recommendation = """Disable SSLv2 on all SSL endpoints."""
+
+[references]
+cve_ids = [] # Array of CVE IDs
+external_references = ["https://www.pcisecuritystandards.org/pdfs/pcissc_assessors_nl_2008-11.pdf"]

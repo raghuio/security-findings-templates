@@ -1,4 +1,3 @@
-
 [metadata]
 finding_id = ""
 title = "Infrastructure: Use of Outdated Software Components"
@@ -6,34 +5,28 @@ date_discovered = ""
 date_reported = ""
 assessment_id = ""
 author = ""
-reviewer = ""
 client_id = ""
 status = ""
-confidentiality = ""
 
 [classification]
-severity = "High" 
-cvss_score = 7.5 
-cvss_vector = "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N" 
-cwe_id = "" 
-cwe_name = ""
-owasp_category = "A06:2021-Vulnerable and Outdated Components" 
+severity = "High"
+cvss_score = 7.5
+cvss_vector = "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+cwe_id = ""
+owasp_category = "A06:2021-Vulnerable and Outdated Components"
 
 [affected_components]
-system = "" 
-component = "" 
-version = "" 
-location = "" 
+system = ""
+component = ""
+version = ""
+location = ""
 endpoints = []
-technologies = []
 
 [details]
 description = ""
 impact = ""
-root_cause = ""
 
 [reproduction]
-preconditions = ""
 steps = [
     "Perform version scanning of services and software running on infrastructure components (servers, network devices, etc.).",
     "Identify the specific versions of operating systems, web servers, application servers, libraries, frameworks, and other software.",
@@ -42,7 +35,6 @@ steps = [
     "Note any publicly available exploits for the identified vulnerabilities."
 ]
 payload = ""
-screenshots = []
 
 [proof_of_concept]
 code = ""
@@ -50,37 +42,11 @@ curl_command = ""
 
 [remediation]
 recommendation = "Implement a robust patch management program. Regularly scan for and identify outdated software components. Apply security patches and updates from vendors in a timely manner. Prioritize patching based on vulnerability severity and exploitability. Consider using automated tools for vulnerability scanning and patch management. If patching is not immediately possible, consider virtual patching or other compensating controls."
-code_fix = ""
-estimated_effort = ""
-timeline = ""
 
 [references]
-cve_ids = [] 
+cve_ids = []
 external_references = [
     "https://owasp.org/Top10/A06_2021-Vulnerable_and_Outdated_Components/",
     "https://cve.mitre.org/",
     "https://nvd.nist.gov/"
 ]
-internal_references = []
-
-[communication]
-disclosed_to = ""
-disclosed_on = ""
-response = ""
-
-[tracking]
-issue_tracker_id = ""
-pull_request = ""
-fix_version = ""
-fix_date = ""
-verification_date = ""
-
-[compliance]
-regulatory_impact = []
-business_impact = ""
-data_breach_risk = false
-
-[additional_info]
-notes = ""
-tags = []
-linked_findings = []

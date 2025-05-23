@@ -1,0 +1,43 @@
+[metadata]
+finding_id = ""
+title = "Open Mail Relay Identified"
+date_discovered = "" # YYYY-MM-DD
+date_reported = "" # YYYY-MM-DD
+assessment_id = ""
+author = ""
+client_id = ""
+status = "" # E.g., "open", "in_progress", "fixed", "closed"
+
+[classification]
+severity = "Medium" # E.g., "critical", "high", "medium", "low", "informational"
+cvss_score = 0.0 # Adjust as needed
+cvss_vector = "" # CVSS v3.1/v4 vector string
+cwe_id = "" # Numeric portion only
+owasp_category = "" 
+
+[affected_components]
+system = ""
+component = ""
+version = ""
+location = "" # E.g., URL, file path, code line
+endpoints = [] # Array of strings
+
+[details]
+description = """An open mail relay is an SMTP server configured in such a way that it allows anyone on the Internet to send e-mail through it, not just mail destined to or originating from known users [1]. The risk to <<full_company_name>> is in the form of corporate integrity. Furthermore, <<full_company_name>> IPs maybe listed blacklisted as a SPAM host or malicious source.
+There is no business value in an Open Mail Relay."""
+impact = ""
+
+[reproduction]
+steps = [] 
+payload = ""
+
+[proof_of_concept]
+code = ""
+curl_command = ""
+
+[remediation]
+recommendation = ""
+
+[references]
+cve_ids = [] # Array of CVE IDs
+external_references = ["https://en.wikipedia.org/wiki/Open_mail_relay"]

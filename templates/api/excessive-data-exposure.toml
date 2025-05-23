@@ -1,4 +1,3 @@
-
 [metadata]
 finding_id = ""
 title = "API Excessive Data Exposure"
@@ -6,18 +5,15 @@ date_discovered = ""
 date_reported = ""
 assessment_id = ""
 author = ""
-reviewer = ""
 client_id = ""
 status = ""
-confidentiality = ""
 
 [classification]
 severity = "Medium"
 cvss_score = 6.5
-cvss_vector = "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N" 
+cvss_vector = "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N"
 cwe_id = ""
-cwe_name = ""
-owasp_category = "API3:2023-Broken Object Property Level Authorization" 
+owasp_category = "API3:2023-Broken Object Property Level Authorization"
 
 [affected_components]
 system = ""
@@ -25,15 +21,12 @@ component = ""
 version = ""
 location = ""
 endpoints = []
-technologies = []
 
 [details]
 description = ""
 impact = ""
-root_cause = ""
 
 [reproduction]
-preconditions = ""
 steps = [
     "Identify API endpoints that return data objects.",
     "Analyze the responses from these endpoints for any sensitive or unnecessary data fields being returned to the client.",
@@ -41,7 +34,6 @@ steps = [
     "Verify if the exposed data could be leveraged for further attacks or lead to privacy violations."
 ]
 payload = ""
-screenshots = []
 
 [proof_of_concept]
 code = ""
@@ -49,9 +41,6 @@ curl_command = ""
 
 [remediation]
 recommendation = "Filter API responses to only include data fields that are explicitly required by the client application for the given context. Avoid relying on client-side filtering. Implement response filtering on the backend. Define clear data contracts (e.g., using OpenAPI schemas) for API responses and ensure they are enforced."
-code_fix = ""
-estimated_effort = ""
-timeline = ""
 
 [references]
 cve_ids = []
@@ -59,26 +48,3 @@ external_references = [
     "https://owasp.org/API-Security/editions/2023/en/0xa3-broken-object-property-level-authorization/",
     "https://owasp.org/API-Security/editions/2019/en/api3-excessive-data-exposure/"
 ]
-internal_references = []
-
-[communication]
-disclosed_to = ""
-disclosed_on = ""
-response = ""
-
-[tracking]
-issue_tracker_id = ""
-pull_request = ""
-fix_version = ""
-fix_date = ""
-verification_date = ""
-
-[compliance]
-regulatory_impact = []
-business_impact = ""
-data_breach_risk = false
-
-[additional_info]
-notes = ""
-tags = []
-linked_findings = []
